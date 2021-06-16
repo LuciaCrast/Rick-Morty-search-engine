@@ -9,15 +9,15 @@ function CharacterDetail({ data }) {
   if (character) {
     return (
       <>
-        <p className="">
+        <p className="arrowLink">
           <Link to="/">
             <i className="far fa-arrow-alt-circle-left">Volver</i>
           </Link>
         </p>
-        <div>
+        <div className="details">
           <CharacterCard card={character} />
-          <p>Número de episodios:{character.episode}</p>
-          <p>Procedencia:{character.origin}</p>
+          <p className="text">Número de episodios:{character.episode}</p>
+          <p className="text">Procedencia:{character.origin}</p>
         </div>
       </>
     );

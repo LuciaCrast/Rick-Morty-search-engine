@@ -8,6 +8,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { CharacterDetail } from "./CharacterDetails";
 import { Warning } from "./Warning";
 import { GetLS, SetLS } from "../service/LocalStorage";
+import "../styles/App.scss";
 
 function App() {
   const [data, setData] = useState(GetLS("characterArray", []));

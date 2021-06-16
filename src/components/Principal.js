@@ -11,7 +11,7 @@ function Principal({
   fail,
 }) {
   return (
-    <>
+    <body className="body">
       <Header />
       <main className="main">
         <Filter
@@ -23,7 +23,7 @@ function Principal({
         />
         <CharacterList fail={fail} data={data} />
       </main>
-    </>
+    </body>
   );
 }
 

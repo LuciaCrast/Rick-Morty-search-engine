@@ -1,14 +1,43 @@
 .list {
   &__ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     list-style: none;
+    padding-left: 60px;
   }
   &__link {
     text-decoration: none;
+    border: solid 3px #8beb78;
+    height: 400px;
+    width: 250px;
+    margin-bottom: 25px;
+    background-image: url("../images/Selection_075.png");
+    background-position: bottom;
+    background-size: contain;
+    color: #35b1c8;
+    line-height: 28px;
   }
   &__element {
-    height: 300px;
-    width: 300px;
+    height: 320px;
+    width: 250px;
   }
+}
+.details {
+  margin-left: 60px;
+  text-decoration: none;
+  border: solid 3px #8beb78;
+  height: 430px;
+  width: 250px;
+  margin-bottom: 25px;
+  background-image: url("../images/Selection_075.png");
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #35b1c8;
+  line-height: 28px;
+}
+.arrowLink {
+  margin-top: 80px;
+  text-align: end;
+  margin-right: 65px;
 }

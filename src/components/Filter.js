@@ -9,6 +9,7 @@ function Filter({ data, valueName, species, onChangeName, onChangeSpecies }) {
         type="text"
         value={valueName}
         onChange={onChangeName}
+        placeholder="Buscar personaje"
       />
       <select
         className="form__select"

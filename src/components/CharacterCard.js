@@ -6,12 +6,11 @@ function CharacterCard({ card }) {
   return (
     <>
       <img className="img" src={card.image} alt={card.name} />
-      <p className="name">Nombre:{card.name}</p>{" "}
-      <p className="specie">
-        Especie:
-        <GetIcon species={card.species} />
+      <p className="text">Nombre: {card.name}</p>{" "}
+      <p className="text">
+        Especie: <GetIcon species={card.species} />
       </p>
-      <p className="status">Status: {card.status}</p>
+      <p className="text">Status: {card.status}</p>
     </>
   );
 }

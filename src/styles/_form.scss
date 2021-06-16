@@ -1,10 +1,22 @@
 .form {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__input {
+    border: 2px solid #35b1c8;
+    height: 28px;
+    width: 150px;
+    padding-left: 10px;
+    font-size: 16px;
+  }
   &__select {
-    width: 130px;
+    width: 150px;
+    margin-top: 10px;
     padding-left: 15px;
-    margin-top: 50px;
     color: #35b1c8;
-    font-size: 20px;
+    font-size: 18px;
     border: 2px solid #35b1c8;
   }
 }
