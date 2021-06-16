@@ -1,6 +1,8 @@
+import "../styles/_form.scss";
+
 function Filter({ data, valueName, species, onChangeName, onChangeSpecies }) {
   return (
-    <form className="form" onSubmit={(evt) => evt.preventDeault()}>
+    <form className="form" onSubmit={(evt) => evt.preventDefault()}>
       <input
         className="form__input"
         name="name"
@@ -14,6 +16,7 @@ function Filter({ data, valueName, species, onChangeName, onChangeSpecies }) {
         value={species}
         onChange={onChangeSpecies}
       >
+        <option value="">Especies</option>
         {data
           .map((user) => user.species)
           // map → convierte el array de objeto en un array de cadena de texto

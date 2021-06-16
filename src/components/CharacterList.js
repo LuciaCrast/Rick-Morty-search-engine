@@ -1,74 +1,47 @@
-// import "../styles/App.scss";
-import { useState, useEffect } from "react";
-import {
-  GetDataFromApi,
-  GetDataFromApibyName,
-} from "../service/GetDataFromApi";
 import { CharacterCard } from "./CharacterCard";
-import { Filter } from "./Filter";
+import { Link } from "react-router-dom";
+import "../styles/_list.scss";
 
-function CharacterList() {
-  const [data, setData] = useState([]);
-  const [fail, setFail] = useState(false);
-  const [valueName, SetValueName] = useState();
-  const [species, setSpecies] = useState();
-  useEffect(() => {
-    GetDataFromApi().then((peopleArray) => {
-      setData(peopleArray);
-    });
-  }, []); //sin dependecia
-
-  useEffect(() => {
-    setFail(false);
-    if (valueName) {
-      GetDataFromApibyName(valueName)
-        .then((peopleArray) => {
-          setData(peopleArray);
-        })
-        .catch(() => {
-          setFail(true);
-        });
-    } else {
-      GetDataFromApi().then((peopleArray) => {
-        setData(peopleArray);
-      });
-    }
-  }, [valueName]); //con dependencia del valor del input
-
+function CharacterList({ valueName, data, species, fail }) {
   return (
-    <>
-      <main className="main">
-        <Filter
-          valueName={valueName}
-          onChangeName={(e) => SetValueName(e.currentTarget.value)}
-          data={data}
-          species={species}
-          onChangeSpecies={(e) => setSpecies(e.currentTarget.value)}
-        />
-        {fail ? (
-          <p className="form__fail">
-            {" "}
-            El nombre {valueName} no ha sido encontrado{" "}
-          </p>
-        ) : (
-          <ul>
-            {data
-              .filter((card) => {
-                if (!species) {
-                  return true;
-                } else {
-                  return species === card.species;
-                }
-              })
-              .map((card) => (
-                <li key={card.id}>
+    <div className="list">
+      {fail ? (
+        <p className="list__fail">
+          El nombre {valueName} no ha sido encontrado
+        </p>
+      ) : (
+        <ul className="list__ul">
+          {data
+            .filter((card) => {
+              if (!species) {
+                return true;
+              } else {
+                return species === card.species;
+              }
+            })
+            .sort(function (a, b) {
+              if (a.name > b.name) {
+                return 1;
+              }
+              if (a.name < b.name) {
+                return -1;
+              }
+              return 0;
+            })
+            .map((card) => (
+              <Link
+                className="list__link"
+                to={`/characterdetails/${card.id}`}
+                key={card.id}
+              >
+                <li className="list__element">
                   <CharacterCard card={card} />
                 </li>
-              ))}
-          </ul>
-        )}
-      </main>
-    </>
+              </Link>
+            ))}
+        </ul>
+      )}
+    </div>
   );
 }
 

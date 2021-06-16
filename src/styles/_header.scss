@@ -1,0 +1,30 @@
+.header {
+  background-color: black;
+  margin: 0px;
+  width: 100vw;
+  height: 200px;
+
+  &__img {
+    width: 400px;
+    height: 150px;
+    padding-bottom: 20px;
+    display: block;
+    margin: auto;
+  }
+
+  @media (min-width: 768px) {
+    background-image: url("https://data1.ibtimes.co.in/en/full/656644/rick-morty.jpg?h=450&l=50&t=40");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    &__img {
+      width: 400px;
+      height: 150px;
+      display: block;
+      margin: auto;
+      padding-left: 100px;
+      padding-top: 150px;
+    }
+  }
+}

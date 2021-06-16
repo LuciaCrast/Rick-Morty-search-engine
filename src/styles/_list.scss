@@ -1,0 +1,14 @@
+.list {
+  &__ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__element {
+    height: 300px;
+    width: 300px;
+  }
+}
