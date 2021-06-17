@@ -21,7 +21,12 @@ function Principal({
           species={species}
           onChangeSpecies={onChangeSpecies}
         />
-        <CharacterList fail={fail} data={data} />
+        <CharacterList
+          fail={fail}
+          data={data}
+          valueName={valueName}
+          species={species}
+        />
       </main>
     </body>
   );
