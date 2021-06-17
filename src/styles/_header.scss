@@ -1,22 +1,34 @@
 .header {
-  background-image: url("https://www.enjpg.com/img/2020/rick-and-morty-8.png");
-  background-size: cover;
+  background-image: url(https://cdn.pastemagazine.com/www/articles/2019/05/15/RickandMortyS4-AdultSwim-Header.jpg);
+  background-color: black;
+  background-position: center;
+  background-size: contain;
   margin: 0px;
   width: 100vw;
   height: 200px;
-  border-bottom: solid 3px#8beb78;
+  border-bottom: solid 3px #6aba68;
+  background-repeat: no-repeat;
   &__title {
     font-size: 18px;
     text-align: center;
     font-family: "Indie Flower", cursive;
-    padding-top: 125px;
-    padding-left: 30px;
+    padding-top: 175px;
+    color: white;
   }
-
-  @media (min-width: 768px) {
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+@media (min-width: 768px) {
+  .header {
+    background-image: url(https://cdn.pastemagazine.com/www/articles/2019/05/15/RickandMortyS4-AdultSwim-Header.jpg);
     background-position: center;
-    height: 300px;
+    background-size: contain;
+    background-color: black;
+    background-repeat: no-repeat;
+    height: 350px;
+
+    &__title {
+      font-size: 35px;
+      text-align: center;
+      padding-top: 305px;
+    }
   }
 }

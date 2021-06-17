@@ -8,27 +8,27 @@ function CharacterDetail({ data }) {
   const character = data.find((person) => person.id.toString() === id);
   if (character) {
     return (
-      <>
-        <p className="arrowLink">
+      <div className="bodyDetails">
+        <p className="arrowContainer">
           <Link to="/">
-            <i className="far fa-arrow-alt-circle-left">Volver</i>
+            <i className="far fa-arrow-alt-circle-left arrowLink">Volver</i>
           </Link>
         </p>
         <div className="details">
           <CharacterCard card={character} />
-          <p className="text">Número de episodios:{character.episode}</p>
-          <p className="text">Procedencia:{character.origin}</p>
+          <p className="text">Episodios: {character.episode}</p>
+          <p className="text">{character.origin}</p>
         </div>
-      </>
+      </div>
     );
   } else {
     return (
-      <>
+      <div className="bodyDetails">
         <Link to="/">
-          <i className="far fa-arrow-alt-circle-left"></i>Volver
+          <i className="far fa-arrow-alt-circle-left"></i> Volver
         </Link>
         <p>Personaje no encontrado</p>
-      </>
+      </div>
     );
   }
 }
