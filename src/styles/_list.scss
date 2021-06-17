@@ -21,6 +21,11 @@
     height: 320px;
     width: 250px;
   }
+  &__fail {
+    color: white;
+    font-size: 24px;
+    padding-left: 20px;
+  }
 }
 .details {
   margin-left: 60px;
@@ -51,6 +56,10 @@
     &__ul {
       display: grid;
       grid-template-columns: 1fr 1fr;
+    }
+    &__fail {
+      font-size: 24px;
+      padding-left: 60px;
     }
   }
   .details {

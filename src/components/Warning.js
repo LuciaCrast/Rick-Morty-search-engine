@@ -1,5 +1,6 @@
 import { Header } from "./Header";
 import { Link } from "react-router-dom";
+import "../styles/_warning.scss";
 
 function Warning() {
   return (
@@ -10,7 +11,7 @@ function Warning() {
           <i className="far fa-arrow-alt-circle-left">Volver</i>
         </Link>
       </p>
-      <p> Dirección no encontrada</p>
+      <p className="warning"> Dirección no encontrada</p>
     </>
   );
 }
