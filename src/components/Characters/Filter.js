@@ -1,4 +1,4 @@
-import "../styles/_form.scss";
+import "./_filter.scss";
 
 function Filter({ data, valueName, species, onChangeName, onChangeSpecies }) {
   return (

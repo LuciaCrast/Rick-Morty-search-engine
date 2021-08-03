@@ -1,6 +1,6 @@
-import { Header } from "./Header";
 import { Link } from "react-router-dom";
-import "../styles/_warning.scss";
+import { Header } from "../Common/Header";
+import "./_warning.scss";
 
 function Warning() {
   return (

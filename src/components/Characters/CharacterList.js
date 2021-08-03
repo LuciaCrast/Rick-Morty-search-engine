@@ -1,6 +1,6 @@
-import { CharacterCard } from "./CharacterCard";
 import { Link } from "react-router-dom";
-import "../styles/_list.scss";
+import { CharacterCard } from "./CharacterCard";
+import "./_characterlist.scss";
 
 function CharacterList({ valueName, data, species, fail }) {
   return (

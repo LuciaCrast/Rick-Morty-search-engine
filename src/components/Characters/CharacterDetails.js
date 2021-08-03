@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { CharacterCard } from "./CharacterCard";
-import PropTypes from "prop-types";
 
 function CharacterDetail({ data }) {
   let { id } = useParams();
@@ -33,8 +32,3 @@ function CharacterDetail({ data }) {
   }
 }
 export { CharacterDetail };
-
-CharacterDetail.propTypes = {
-  episode: PropTypes.number,
-  origin: PropTypes.string,
-};

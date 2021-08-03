@@ -1,5 +1,5 @@
 import { Filter } from "./Filter";
-import { Header } from "./Header";
+import { Header } from "../Common/Header";
 import { CharacterList } from "./CharacterList";
 
 function Principal({

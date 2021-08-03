@@ -1,6 +1,5 @@
-import { GetIcon, GetIconDead } from "./GetIcon";
-import PropTypes from "prop-types";
-import "../styles/_characterCard.scss";
+import { GetIcon, GetIconDead } from "../Common/GetIcon";
+import "./_characterCard.scss";
 
 function CharacterCard({ card }) {
   return (
@@ -17,9 +16,3 @@ function CharacterCard({ card }) {
   );
 }
 export { CharacterCard };
-
-CharacterCard.propTypes = {
-  name: PropTypes.string,
-  status: PropTypes.object,
-  species: PropTypes.object,
-};

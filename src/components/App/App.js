@@ -1,14 +1,14 @@
-import { Principal } from "./Principal";
 import { useState, useEffect } from "react";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { Warning } from "../WarningError/Warning";
+import { GetLS, SetLS } from "../../service/LocalStorage";
+import { Principal } from "../Characters/PrincipalCharacter";
+import { CharacterDetail } from "../Characters/CharacterDetails";
 import {
   GetDataFromApi,
   GetDataFromApibyName,
-} from "../service/GetDataFromApi";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import { CharacterDetail } from "./CharacterDetails";
-import { Warning } from "./Warning";
-import { GetLS, SetLS } from "../service/LocalStorage";
-import "../styles/App.scss";
+} from "../../service/GetDataFromApi";
+import "./App.scss";
 
 function App() {
   const [data, setData] = useState(GetLS("characterArray", []));
