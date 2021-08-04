@@ -38,7 +38,7 @@ function CharacterDetail() {
   } else {
     return (
       <div className="bodyDetails">
-        <Link to="/">
+        <Link to="/principalcharacter">
           <i className="far fa-arrow-alt-circle-left"></i> Volver
         </Link>
         <p>Personaje no encontrado</p>
