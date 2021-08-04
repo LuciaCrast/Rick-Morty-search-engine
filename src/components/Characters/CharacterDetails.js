@@ -1,11 +1,26 @@
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CharacterCard } from "./CharacterCard";
+import { GetDataDetailsCharacter } from "../../service/GetDataFromApi";
 
-function CharacterDetail({ data }) {
+function CharacterDetail() {
+  const [characterDetail, setCharacterDetail] = useState();
+  const [fail, setFail] = useState(false);
   let { id } = useParams();
-  const character = data.find((person) => person.id.toString() === id);
-  if (character) {
+
+  useEffect(() => {
+    setFail(false);
+    GetDataDetailsCharacter(id)
+      .then((character) => {
+        setCharacterDetail(character);
+      })
+      .catch((fail) => {
+        setFail(true);
+      });
+  }, [id]);
+
+  if (characterDetail) {
     return (
       <div className="bodyDetails">
         <p className="arrowContainer">
@@ -14,9 +29,9 @@ function CharacterDetail({ data }) {
           </Link>
         </p>
         <div className="details">
-          <CharacterCard card={character} />
-          <p className="text">Episodios: {character.episode}</p>
-          <p className="text">{character.origin}</p>
+          <CharacterCard card={characterDetail} />
+          <p className="text">Episodios: {characterDetail.episode}</p>
+          <p className="text">{characterDetail.origin}</p>
         </div>
       </div>
     );

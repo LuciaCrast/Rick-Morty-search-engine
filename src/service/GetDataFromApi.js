@@ -35,4 +35,22 @@ function GetDataFromApibyName(name) {
     );
 }
 
-export { GetDataFromApi, GetDataFromApibyName };
+function GetDataDetailsCharacter(id) {
+  const ENDPOINT = "https://rickandmortyapi.com/api/character/";
+  return fetch(ENDPOINT + id)
+    .then((response) => response.json())
+    .then((response) => {
+      if (response.error) throw new Error(response.error);
+      return {
+        id: response.id,
+        name: response.name,
+        status: response.status,
+        species: response.species,
+        image: response.image,
+        episode: response.episode.length,
+        origin: response.origin.name,
+      };
+    });
+}
+
+export { GetDataFromApi, GetDataFromApibyName, GetDataDetailsCharacter };
