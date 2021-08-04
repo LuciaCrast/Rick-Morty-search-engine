@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-
-import { Filter } from "./Filter";
+import { CharacterFilter } from "./CharacterFilter";
 import { Header } from "../Common/Header";
 import { CharacterList } from "./CharacterList";
 import { GetLS, SetLS } from "../../service/LocalStorage";
@@ -37,14 +36,13 @@ function PrincipalCharacter() {
     <body className="body">
       <Header />
       <main className="main">
-        <Filter
+        <CharacterFilter
           valueName={valueName}
-          data={data}
-          species={species}
           onChangeName={(e) => {
             SetValueName(e.currentTarget.value);
             SetLS("filterName", e.currentTarget.value);
           }}
+          species={species}
           onChangeSpecies={(e) => {
             setSpecies(e.currentTarget.value);
             SetLS("filterSpecies", e.currentTarget.value);

@@ -24,7 +24,7 @@ function CharacterDetail() {
     return (
       <div className="bodyDetails">
         <p className="arrowContainer">
-          <Link to="/">
+          <Link to="/principalcharacter">
             <i className="far fa-arrow-alt-circle-left arrowLink">Volver</i>
           </Link>
         </p>
@@ -35,7 +35,7 @@ function CharacterDetail() {
         </div>
       </div>
     );
-  } else {
+  } else if (fail) {
     return (
       <div className="bodyDetails">
         <Link to="/principalcharacter">
@@ -44,6 +44,8 @@ function CharacterDetail() {
         <p>Personaje no encontrado</p>
       </div>
     );
+  } else {
+    return <p>Loquesea</p>;
   }
 }
 export { CharacterDetail };
