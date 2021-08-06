@@ -3,35 +3,36 @@ import { CharacterFilter } from "./CharacterFilter";
 import { Header } from "../Common/Header";
 import { CharacterList } from "./CharacterList";
 import { GetLS, SetLS } from "../../service/LocalStorage";
-import {
-  GetDataFromApi,
-  GetDataFromApibyName,
-} from "../../service/GetDataFromApi";
+import { GetDataFromApiCharacter } from "../../service/GetDataFromApi";
 
 function PrincipalCharacter() {
   const [data, setData] = useState(GetLS("characterArray", []));
   const [fail, setFail] = useState(false);
   const [valueName, SetValueName] = useState(GetLS("filterName", ""));
   const [species, setSpecies] = useState(GetLS("filterSpecies", ""));
+  const [pages, setPages] = useState(GetLS("pages", 1));
+  const [currentSite, setCurrentSite] = useState(GetLS("currentSite", 1));
 
   useEffect(() => {
     setFail(false);
-    if (valueName) {
-      GetDataFromApibyName(valueName)
-        .then((characterArray) => {
-          setData(characterArray);
-          SetLS("characterArray", characterArray);
-        })
-        .catch(() => {
-          setFail(true);
-        });
-    } else {
-      GetDataFromApi().then((characterArray) => {
+    // if (valueName) {
+    GetDataFromApiCharacter({
+      name: valueName,
+      species: species,
+      page: currentSite,
+    })
+      .then(({ characterArray, totalPages }) => {
         setData(characterArray);
+        setPages(totalPages);
         SetLS("characterArray", characterArray);
+        SetLS("pages", totalPages);
+      })
+      .catch((fail) => {
+        setFail(true);
       });
-    }
-  }, [valueName]); //con dependencia del valor del input
+    // }
+  }, [valueName, species, currentSite]);
+
   return (
     <body className="body">
       <Header />
@@ -48,12 +49,7 @@ function PrincipalCharacter() {
             SetLS("filterSpecies", e.currentTarget.value);
           }}
         />
-        <CharacterList
-          fail={fail}
-          data={data}
-          valueName={valueName}
-          species={species}
-        />
+        <CharacterList fail={fail} data={data} valueName={valueName} />
       </main>
     </body>
   );

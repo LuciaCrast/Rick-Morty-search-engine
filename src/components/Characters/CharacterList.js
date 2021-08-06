@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { CharacterCard } from "./CharacterCard";
 import "./_characterlist.scss";
 
-function CharacterList({ valueName, data, species, fail }) {
+function CharacterList({ valueName, data, fail }) {
   return (
     <div className="list">
       {fail ? (
@@ -11,34 +11,13 @@ function CharacterList({ valueName, data, species, fail }) {
         </p>
       ) : (
         <ul className="list__ul">
-          {data
-            .filter((card) => {
-              if (!species) {
-                return true;
-              } else {
-                return species === card.species;
-              }
-            })
-            .sort(function (a, b) {
-              if (a.name > b.name) {
-                return 1;
-              }
-              if (a.name < b.name) {
-                return -1;
-              }
-              return 0;
-            })
-            .map((card) => (
-              <Link
-                className="list__link"
-                to={`/characterdetails/${card.id}`}
-                key={card.id}
-              >
-                <li className="list__element">
-                  <CharacterCard card={card} />
-                </li>
+          {data.map((card) => (
+            <li className="list__element" key={card.id}>
+              <Link className="list__link" to={`/characterdetails/${card.id}`}>
+                <CharacterCard card={card} />
               </Link>
-            ))}
+            </li>
+          ))}
         </ul>
       )}
     </div>

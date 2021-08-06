@@ -1,38 +1,43 @@
-function GetDataFromApi() {
+// function GetDataFromApi() {
+//   const ENDPOINT = "https://rickandmortyapi.com/api/character";
+//   return fetch(ENDPOINT)
+//     .then((response) => response.json())
+//     .then((response) =>
+//       response.results.map((character) => {
+//         return {
+//           id: character.id,
+//           name: character.name,
+//           status: character.status,
+//           species: character.species,
+//           image: character.image,
+//           episode: character.episode.length,
+//           origin: character.origin.name,
+//         };
+//       })
+//     );
+// }
+function GetDataFromApiCharacter(params = {}) {
   const ENDPOINT = "https://rickandmortyapi.com/api/character";
-  return fetch(ENDPOINT)
+  const searchParams = new URLSearchParams();
+  for (let fieldName in params) {
+    if (params[fieldName]) {
+      searchParams.append(fieldName, params[fieldName]);
+    }
+  }
+  return fetch(ENDPOINT + "?" + searchParams.toString())
     .then((response) => response.json())
-    .then((response) =>
-      response.results.map((character) => {
+    .then((response) => {
+      const characterArray = response.results.map((character) => {
         return {
           id: character.id,
           name: character.name,
           status: character.status,
           species: character.species,
           image: character.image,
-          episode: character.episode.length,
-          origin: character.origin.name,
         };
-      })
-    );
-}
-function GetDataFromApibyName(name) {
-  const ENDPOINT = "https://rickandmortyapi.com/api/character/?name=";
-  return fetch(ENDPOINT + name)
-    .then((response) => response.json())
-    .then((response) =>
-      response.results.map((character) => {
-        return {
-          id: character.id,
-          name: character.name,
-          status: character.status,
-          species: character.species,
-          image: character.image,
-          episode: character.episode.length,
-          origin: character.origin.name,
-        };
-      })
-    );
+      });
+      return { characterArray, totalPages: response.info.pages };
+    });
 }
 
 function GetDataDetailsCharacter(id) {
@@ -53,4 +58,4 @@ function GetDataDetailsCharacter(id) {
     });
 }
 
-export { GetDataFromApi, GetDataFromApibyName, GetDataDetailsCharacter };
+export { GetDataFromApiCharacter, GetDataDetailsCharacter };
