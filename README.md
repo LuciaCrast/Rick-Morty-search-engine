@@ -18,7 +18,7 @@ de personajes correspondiete a la primera página de la API. Para saber más de 
 
 ## Detalles
 
-1. Las tarjetas contienen dibujitos para designar la especia y el estatus. Si ponemos el cursor sobre ellos sabemos qué especie es.
+1. Las tarjetas contienen dibujitos para designar la especie y el estatus. Si ponemos el cursor sobre ellos sabemos qué especie es.
 2. La disposición de las tarjetas está echa con Grid.
 3. La página es Responsive.
 4. Los resultados se ordenan alfabéticamente.
