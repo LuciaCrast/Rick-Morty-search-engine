@@ -4,6 +4,7 @@ import { Header } from "../Common/Header";
 import { CharacterList } from "./CharacterList";
 import { GetLS, SetLS } from "../../service/LocalStorage";
 import { GetDataFromApiCharacter } from "../../service/GetDataFromApi";
+import { Pagination } from "../Common/Pagination";
 
 function PrincipalCharacter() {
   const [data, setData] = useState(GetLS("characterArray", []));
@@ -42,13 +43,31 @@ function PrincipalCharacter() {
           onChangeName={(e) => {
             SetValueName(e.currentTarget.value);
             SetLS("filterName", e.currentTarget.value);
+            setCurrentSite(1);
           }}
           species={species}
           onChangeSpecies={(e) => {
             setSpecies(e.currentTarget.value);
             SetLS("filterSpecies", e.currentTarget.value);
+            setCurrentSite(1);
           }}
         />
+        {!fail ? (
+          <Pagination
+            currentSite={currentSite}
+            pages={pages}
+            onClickPrevious={() => {
+              if (currentSite >= 2) {
+                setCurrentSite(currentSite - 1);
+              }
+            }}
+            onClickAfter={() => {
+              if (currentSite < pages) {
+                setCurrentSite(currentSite + 1);
+              }
+            }}
+          />
+        ) : null}
         <CharacterList fail={fail} data={data} valueName={valueName} />
       </main>
     </body>
