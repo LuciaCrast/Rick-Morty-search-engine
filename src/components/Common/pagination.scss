@@ -1,15 +1,19 @@
 .sectionPagination {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  margin-bottom: 20px;
+  flex-flow: wrap;
 
   &__button {
     color: #35b1c8;
     border: 2px solid #35b1c8;
     height: 28px;
     width: 150px;
+    margin: auto;
   }
   &__paragraph {
     color: white;
+    font-size: 15px;
   }
 }

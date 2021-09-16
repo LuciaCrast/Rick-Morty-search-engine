@@ -4,7 +4,6 @@
   background-position: center;
   background-size: contain;
   margin: 0px;
-  width: 100vw;
   height: 200px;
   border-bottom: solid 3px #6aba68;
   background-repeat: no-repeat;
@@ -18,11 +17,6 @@
 }
 @media (min-width: 768px) {
   .header {
-    background-image: url(https://cdn.pastemagazine.com/www/articles/2019/05/15/RickandMortyS4-AdultSwim-Header.jpg);
-    background-position: center;
-    background-size: contain;
-    background-color: black;
-    background-repeat: no-repeat;
     height: 350px;
 
     &__title {
