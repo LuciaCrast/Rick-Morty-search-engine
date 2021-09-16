@@ -1,4 +1,5 @@
 import { Filter } from "../Common/Filter";
+import { Search } from "../Common/search";
 import "../Common/filter.scss";
 
 let optionsSpecies = [
@@ -20,9 +21,10 @@ function CharacterFilter({
   species,
   onChangeName,
   onChangeSpecies,
+  onSubmitSearch,
 }) {
   return (
-    <form className="form" onSubmit={(evt) => evt.preventDefault()}>
+    <form className="form" onSubmit={onSubmitSearch}>
       <Filter
         name="characterName"
         typeInput="text"
@@ -38,6 +40,7 @@ function CharacterFilter({
         allOptions="Especies"
         options={optionsSpecies}
       />
+      <Search />
     </form>
   );
 }

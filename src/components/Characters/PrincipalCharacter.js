@@ -13,29 +13,31 @@ function PrincipalCharacter() {
   const [species, setSpecies] = useState(GetLS("filterSpecies", ""));
   const [pages, setPages] = useState(GetLS("pages", 1));
   const [currentSite, setCurrentSite] = useState(GetLS("currentSite", 1));
+  const [searchAtAPI, setSearchAtAPI] = useState(true);
 
   useEffect(() => {
-    setFail(false);
-    // if (valueName) {
-    GetDataFromApiCharacter({
-      name: valueName,
-      species: species,
-      page: currentSite,
-    })
-      .then(({ characterArray, totalPages }) => {
-        setData(characterArray);
-        setPages(totalPages);
-        SetLS("characterArray", characterArray);
-        SetLS("pages", totalPages);
+    if (searchAtAPI) {
+      setFail(false);
+      setSearchAtAPI(false);
+      GetDataFromApiCharacter({
+        name: valueName,
+        species: species,
+        page: currentSite,
       })
-      .catch((fail) => {
-        setFail(true);
-      });
-    // }
-  }, [valueName, species, currentSite]);
+        .then(({ characterArray, totalPages }) => {
+          setData(characterArray);
+          setPages(totalPages);
+          SetLS("characterArray", characterArray);
+          SetLS("pages", totalPages);
+        })
+        .catch((fail) => {
+          setFail(true);
+        });
+    }
+  }, [valueName, species, currentSite, searchAtAPI]);
 
   return (
-    <body className="body">
+    <>
       <Header />
       <main className="main">
         <CharacterFilter
@@ -50,6 +52,10 @@ function PrincipalCharacter() {
             setSpecies(e.currentTarget.value);
             SetLS("filterSpecies", e.currentTarget.value);
             setCurrentSite(1);
+          }}
+          onSubmitSearch={(evt) => {
+            setSearchAtAPI(true);
+            evt.preventDefault();
           }}
         />
         {!fail ? (
@@ -70,7 +76,7 @@ function PrincipalCharacter() {
         ) : null}
         <CharacterList fail={fail} data={data} valueName={valueName} />
       </main>
-    </body>
+    </>
   );
 }
 
