@@ -57,6 +57,15 @@ function PrincipalCharacter() {
             setSearchAtAPI(true);
             evt.preventDefault();
           }}
+          onClickReset={() => {
+            SetValueName("");
+            SetLS("filterName", "");
+            setSpecies("");
+            SetLS("filterSpecies", "");
+            SetLS("pages", 1);
+            SetLS("currentSite", 1);
+            setSearchAtAPI(true);
+          }}
         />
         {!fail ? (
           <Pagination

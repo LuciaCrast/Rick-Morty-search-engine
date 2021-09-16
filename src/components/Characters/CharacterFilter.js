@@ -1,5 +1,6 @@
 import { Filter } from "../Common/Filter";
 import { Search } from "../Common/search";
+import { Reset } from "../Common/reset";
 import "../Common/filter.scss";
 
 let optionsSpecies = [
@@ -22,6 +23,7 @@ function CharacterFilter({
   onChangeName,
   onChangeSpecies,
   onSubmitSearch,
+  onClickReset,
 }) {
   return (
     <form className="form" onSubmit={onSubmitSearch}>
@@ -41,6 +43,7 @@ function CharacterFilter({
         options={optionsSpecies}
       />
       <Search />
+      <Reset onClickReset={onClickReset} />
     </form>
   );
 }
