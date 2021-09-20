@@ -2,6 +2,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Warning } from "../WarningError/Warning";
 
 import { PrincipalCharacter } from "../Characters/PrincipalCharacter";
+import { PrincipalLocation } from "../Location/PrincipalLocation";
 import { CharacterDetail } from "../Characters/CharacterDetails";
 import { Principal } from "../Home/Principal";
 
@@ -17,6 +18,7 @@ function App() {
           exact
           component={PrincipalCharacter}
         />
+        <Route path="/principallocation" exact component={PrincipalLocation} />
         <Route path="/characterdetails/:id" children={<CharacterDetail />} />
         <Route path="" children={<Warning />} />
       </Switch>

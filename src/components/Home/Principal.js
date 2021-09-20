@@ -9,6 +9,9 @@ function Principal() {
       <Link to="/principalcharacter" className="link">
         Buscar por Personaje
       </Link>
+      <Link to="/principallocation" className="link">
+        Buscar por Localización
+      </Link>
     </>
   );
 }
