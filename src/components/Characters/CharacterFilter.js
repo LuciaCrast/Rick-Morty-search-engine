@@ -42,8 +42,10 @@ function CharacterFilter({
         allOptions="Especies"
         options={optionsSpecies}
       />
-      <Search />
-      <Reset onClickReset={onClickReset} />
+      <section className="formButtons">
+        <Search />
+        <Reset onClickReset={onClickReset} />
+      </section>
     </form>
   );
 }

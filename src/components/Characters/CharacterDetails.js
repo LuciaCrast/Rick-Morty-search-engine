@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CharacterCard } from "./CharacterCard";
@@ -8,6 +9,11 @@ function CharacterDetail() {
   const [characterDetail, setCharacterDetail] = useState();
   const [fail, setFail] = useState(false);
   let { id } = useParams();
+
+  // let history = useHistory();
+  // const goToPreviousPath = () => {
+  //   history.goBack();
+  // };
 
   useEffect(() => {
     setFail(false);
