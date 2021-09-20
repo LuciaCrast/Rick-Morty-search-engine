@@ -74,11 +74,13 @@ function PrincipalCharacter() {
             onClickPrevious={() => {
               if (currentSite >= 2) {
                 setCurrentSite(currentSite - 1);
+                setSearchAtAPI(true);
               }
             }}
             onClickAfter={() => {
               if (currentSite < pages) {
                 setCurrentSite(currentSite + 1);
+                setSearchAtAPI(true);
               }
             }}
           />
