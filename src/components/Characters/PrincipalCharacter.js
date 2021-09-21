@@ -64,6 +64,7 @@ function PrincipalCharacter() {
             SetLS("filterSpecies", "");
             SetLS("pages", 1);
             SetLS("currentSite", 1);
+            setCurrentSite(1);
             setSearchAtAPI(true);
           }}
         />
