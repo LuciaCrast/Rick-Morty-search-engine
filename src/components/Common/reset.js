@@ -2,7 +2,7 @@ import "./reset.scss";
 
 function Reset({ onClickReset }) {
   return (
-    <button className="btn-13" onClick={onClickReset}>
+    <button className="button" onClick={onClickReset}>
       Reset
     </button>
   );
