@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useHistory } from "react-router";
+// import { useHistory } from "react-router";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CharacterCard } from "./CharacterCard";
