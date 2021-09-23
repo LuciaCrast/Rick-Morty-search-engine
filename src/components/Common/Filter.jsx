@@ -1,7 +1,6 @@
 function Filter({
   typeInput,
   id,
-  valueName,
   onChangeName,
   placeholder,
   value,
@@ -15,7 +14,7 @@ function Filter({
         className="form__input"
         name={id}
         type="text"
-        value={valueName}
+        value={value}
         onChange={onChangeName}
         placeholder={placeholder}
       />
