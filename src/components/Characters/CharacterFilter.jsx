@@ -18,7 +18,7 @@ let optionsSpecies = [
 ];
 
 function CharacterFilter({
-  valueName,
+  value,
   species,
   onChangeName,
   onChangeSpecies,
@@ -30,7 +30,7 @@ function CharacterFilter({
       <Filter
         name="characterName"
         typeInput="text"
-        value={valueName}
+        value={value}
         onChangeName={onChangeName}
         placeholder="Buscar personaje"
       />
