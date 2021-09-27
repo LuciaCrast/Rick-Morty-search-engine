@@ -1,5 +1,5 @@
 import { GetIcon, GetIconDead } from "../Common/GetIcon";
-import "./_characterCard.scss";
+import "./characterCard.scss";
 
 function CharacterCard({ card }) {
   return (
