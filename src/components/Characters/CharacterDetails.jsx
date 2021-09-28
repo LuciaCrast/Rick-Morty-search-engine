@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CharacterCard } from "./CharacterCard";
 import { GetDataDetailsCharacter } from "../../service/GetDataFromApi";
+import "./characterdetails.scss";
 
 function CharacterDetail() {
   const [characterDetail, setCharacterDetail] = useState();
