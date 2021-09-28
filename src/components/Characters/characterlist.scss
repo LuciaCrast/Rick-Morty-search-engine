@@ -3,8 +3,8 @@
     display: grid;
     grid-template-columns: 1fr;
     list-style: none;
-    padding-left: 60px;
-    margin-bottom: 30px;
+    // padding-left: 60px;
+    // margin-left: calc(100% - 300px);
   }
   &__link {
     color: #35b1c8;
@@ -12,16 +12,11 @@
   }
   &__element {
     height: 320px;
-    width: 250px;
-    margin-bottom: 30px;
+    width: 200px;
     text-decoration: none;
     border: solid 3px #6aba68;
-    height: 400px;
-    width: 250px;
     margin-bottom: 25px;
-    background-image: url("../../images/Selection_075.png");
-    background-position: bottom;
-    background-size: contain;
+    background-color: black;
   }
   &__fail {
     color: white;
@@ -30,15 +25,17 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
   .list {
     &__ul {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
+  }
+}
+@media (min-width: 768px) {
+  .list {
     &__element {
-      height: 320px;
-      width: 250px;
       margin-bottom: 30px;
       text-decoration: none;
       border: solid 3px #6aba68;

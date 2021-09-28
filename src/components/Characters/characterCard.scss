@@ -3,8 +3,8 @@ html {
 }
 
 .img {
-  height: 200px;
-  width: 244px;
+  height: 180px;
+  width: 194px;
   border-bottom: 3px solid #8beb78;
 }
 .text {
@@ -13,4 +13,11 @@ html {
   font-weight: normal;
   font-size: 22px;
   font-family: "Indie Flower", cursive;
+}
+
+@media (min-width: 768px) {
+  .img {
+    height: 200px;
+    width: 244px;
+  }
 }
