@@ -1,6 +1,22 @@
-.link {
-  color: white;
-  font-size: 30px;
-  text-decoration: none;
-  display: block;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 380px;
+  &__link {
+    cursor: pointer;
+    text-align: center;
+    background-color: black;
+    width: 315px;
+    margin: 25px 0;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    display: block;
+    font-family: "Indie Flower", cursive;
+    border: white solid;
+    border-radius: 25px;
+    padding: 5px;
+  }
 }

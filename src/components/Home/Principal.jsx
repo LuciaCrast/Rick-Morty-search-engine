@@ -6,12 +6,17 @@ function Principal() {
   return (
     <>
       <Header />
-      <Link to="/principalcharacter" className="link">
-        Buscar por Personaje
-      </Link>
-      <Link to="/principallocation" className="link">
-        Buscar por Localización
-      </Link>
+      <section className="container">
+        <Link to="/principalcharacter" className="container__link">
+          Buscar por Personaje
+        </Link>
+        <Link to="/principallocation" className="container__link">
+          Buscar por Localización
+        </Link>
+        <Link to="/principallocation" className="container__link">
+          Buscar por Localización
+        </Link>
+      </section>
     </>
   );
 }
