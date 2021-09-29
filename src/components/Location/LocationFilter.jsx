@@ -89,7 +89,7 @@ function LocationFilter({
   onSubmitSearchLocation,
 }) {
   return (
-    <form onSubmit={onSubmitSearchLocation}>
+    <form className="form" onSubmit={onSubmitSearchLocation}>
       <Filter
         typeInput="text"
         value={valueNameLocation}
@@ -112,8 +112,10 @@ function LocationFilter({
         allOptions="Todas las dimensiones"
         options={dimensionLocation}
       />
-      <Search />
-      <Reset onClickReset={onClickResetLocation} />
+      <section className="forms__buttons">
+        <Search />
+        <Reset onClickReset={onClickResetLocation} />
+      </section>
     </form>
   );
 }
