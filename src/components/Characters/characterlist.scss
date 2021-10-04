@@ -1,9 +1,12 @@
 .list {
   &__ul {
-    display: grid;
-    grid-template-columns: 1fr;
     list-style: none;
     margin-left: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-flow: wrap;
   }
   &__link {
     color: #35b1c8;
@@ -16,6 +19,7 @@
     border: solid 3px #6aba68;
     margin-bottom: 25px;
     background-color: black;
+    margin-right: 30px;
   }
   &__fail {
     color: white;
@@ -24,14 +28,6 @@
   }
 }
 
-@media (min-width: 500px) {
-  .list {
-    &__ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-}
 @media (min-width: 768px) {
   .list {
     &__element {
@@ -40,7 +36,6 @@
       border: solid 3px #6aba68;
       height: 400px;
       width: 250px;
-      margin-bottom: 25px;
       background-image: url("../../images/Selection_075.png");
       background-position: bottom;
       background-size: contain;
@@ -48,23 +43,6 @@
     &__fail {
       font-size: 24px;
       padding-left: 60px;
-    }
-  }
-}
-
-@media (min-width: 1024px) {
-  .list {
-    &__ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-}
-@media (min-width: 1400px) {
-  .list {
-    &__ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 }

@@ -9,9 +9,9 @@ function Pagination({ onClickAfter, onClickPrevious, currentSite, pages }) {
       <button className="sectionPagination__button" onClick={onClickAfter}>
         Página Siguiente <i className="fas fa-chevron-right"></i>
       </button>
-      <p className="sectionPagination__paragraph">
+      {/* <p className="sectionPagination__paragraph">
         Estás en la página {currentSite} de {pages}
-      </p>
+      </p> */}
     </section>
   );
 }
