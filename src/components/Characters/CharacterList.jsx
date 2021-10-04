@@ -4,7 +4,7 @@ import "./characterlist.scss";
 
 function CharacterList({ valueName, data, fail }) {
   return (
-    <div className="list">
+    <>
       {fail ? (
         <p className="list__fail">
           El nombre {valueName} no ha sido encontrado
@@ -20,7 +20,7 @@ function CharacterList({ valueName, data, fail }) {
           ))}
         </ul>
       )}
-    </div>
+    </>
   );
 }
 

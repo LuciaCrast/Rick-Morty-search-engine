@@ -3,7 +3,7 @@ import { LocationCard } from "./LocationCard";
 
 function LocationList({ apiDataLocation }) {
   return (
-    <ul>
+    <ul className="locationUl">
       {apiDataLocation.map((locationdata) => (
         <li key={locationdata.id}>
           <Link>
