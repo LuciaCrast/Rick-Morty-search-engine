@@ -14,14 +14,15 @@
   background-color: #35b1c8;
   margin-right: 10px;
   margin-left: 7px;
+  margin-top: 10px;
   cursor: pointer;
 }
 .button:hover {
   border-color: rgba(255, 255, 255, 1);
 }
-@media all and (max-width: 30em) {
-   .button {
-    display: block;
-    margin: 0.2em auto;
+
+@media (min-width: 768px) {
+  .button {
+    margin-top: 0;
   }
 }

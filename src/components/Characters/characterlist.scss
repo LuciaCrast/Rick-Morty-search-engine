@@ -1,12 +1,12 @@
 .list {
   &__ul {
     list-style: none;
-    margin-left: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
     flex-flow: wrap;
+    margin: auto;
   }
   &__link {
     color: #35b1c8;
