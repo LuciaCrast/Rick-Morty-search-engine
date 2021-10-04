@@ -1,15 +1,15 @@
 .sectionPagination {
   display: flex;
   align-items: center;
-  flex-direction: row;
+  justify-content: center;
   margin-bottom: 20px;
   flex-flow: wrap;
   border-top: solid 3px #6aba68;
+  height: 90px;
 
   &__button {
+    // margin: 20px 30px 10px 0;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 10px;
     padding: 0.3em 1.2em;
     border: 0.16em solid rgba(255, 255, 255, 0);
     border-radius: 2em;
