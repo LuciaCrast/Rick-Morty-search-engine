@@ -13,8 +13,8 @@ function Principal() {
         <Link to="/principallocation" className="container__link">
           Buscar por Localización
         </Link>
-        <Link to="/principallocation" className="container__link">
-          Buscar por Localización
+        <Link to="/#" className="container__link">
+          En construcción...
         </Link>
       </section>
     </>
