@@ -32,13 +32,15 @@ function CharacterDetail() {
       <div className="bodyDetails">
         <p className="arrowContainer">
           <Link to="/principalcharacter">
-            <i className="far fa-arrow-alt-circle-left arrowLink">Volver</i>
+            <div className="arrowLink">
+              <i className="far fa-arrow-alt-circle-left "></i> Volver
+            </div>
           </Link>
         </p>
         <div className="details">
           <CharacterCard card={characterDetail} />
-          <p className="text">Episodios: {characterDetail.episode}</p>
-          <p className="text">{characterDetail.origin}</p>
+          <p className="list__text">Episodios: {characterDetail.episode}</p>
+          <p className="list__text">{characterDetail.origin}</p>
         </div>
       </div>
     );
@@ -46,7 +48,7 @@ function CharacterDetail() {
     return (
       <div className="bodyDetails">
         <Link to="/principalcharacter">
-          <i className="far fa-arrow-alt-circle-left"></i> Volver
+          <i className="far fa-arrow-alt-circle-left arrowLink"></i> Volver
         </Link>
         <p>Personaje no encontrado</p>
       </div>

@@ -8,10 +8,7 @@
     flex-flow: wrap;
     margin: auto;
   }
-  &__link {
-    color: #35b1c8;
-    line-height: 28px;
-  }
+
   &__element {
     height: 320px;
     width: 200px;
@@ -21,6 +18,21 @@
     background-color: black;
     margin-right: 30px;
   }
+  &__img {
+    height: 180px;
+    width: 194px;
+    border-bottom: 3px solid #8beb78;
+  }
+  &__text {
+    line-height: 28px;
+    color: #35b1c8;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-weight: normal;
+    font-size: 22px;
+    font-family: "Indie Flower", cursive;
+  }
+
   &__fail {
     color: white;
     font-size: 24px;
@@ -39,6 +51,10 @@
       background-image: url("../../images/Selection_075.png");
       background-position: bottom;
       background-size: contain;
+    }
+    &__img {
+      height: 200px;
+      width: 244px;
     }
     &__fail {
       font-size: 24px;

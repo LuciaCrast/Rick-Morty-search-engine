@@ -1,14 +1,11 @@
 .details {
-  margin-left: 60px;
+  margin: auto;
   text-decoration: none;
   border: solid 3px #6aba68;
-  height: 430px;
-  width: 250px;
+  height: 400px;
+  width: 200px;
   margin-bottom: 25px;
-  background-image: url("../../images/Selection_075.png");
-  background-position: bottom;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-color: black;
   color: #35b1c8;
   line-height: 28px;
 }
@@ -17,14 +14,41 @@
   text-align: end;
 }
 
+// .arrowLink {
+//   margin-right: 75px;
+//   color: white;
+// }
 .arrowLink {
-  margin-right: 65px;
-  color: white;
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 2em;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transition: all 0.2s;
+  background-color: #35b1c8;
+  margin-right: 75px;
+  margin-left: 7px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.arrowLink:hover {
+  border-color: rgba(255, 255, 255, 1);
 }
 
 @media (min-width: 768px) {
   .details {
     margin: auto;
+    width: 250px;
+    background-image: url("../../images/Selection_075.png");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   .arrowContainer {
     text-align: center;

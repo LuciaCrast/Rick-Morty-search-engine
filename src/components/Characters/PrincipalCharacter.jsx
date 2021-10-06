@@ -5,6 +5,7 @@ import { CharacterList } from "./CharacterList";
 import { GetLS, SetLS } from "../../service/LocalStorage";
 import { GetDataFromApiCharacter } from "../../service/GetDataFromApi";
 import { Pagination } from "../Common/Pagination";
+import "./principalCharacter.scss";
 
 function PrincipalCharacter() {
   const [data, setData] = useState(GetLS("characterArray", []));
