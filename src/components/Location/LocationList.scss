@@ -1,0 +1,36 @@
+.locationUl {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-flow: wrap;
+  &__li {
+    height: 300px;
+    width: 260px;
+    text-decoration: none;
+    border: solid 3px #6aba68;
+    margin-bottom: 25px;
+    background-image: url("../../images/Selection_082.png");
+    background-position: center;
+    background-size: cover;
+    background-color: black;
+    opacity: 78%;
+  }
+
+  &__paragraph {
+    color: black;
+    font-weight: bold;
+    font-family: "Indie Flower";
+    font-size: 24px;
+    margin: 15px 15px;
+  }
+}
+
+@media (min-width: 520px) {
+  .locationUl {
+    &__li {
+      margin-right: 30px;
+    }
+  }
+}

@@ -1,17 +1,17 @@
 function LocationCard({ locationdata }) {
   return (
-    <>
+    <div className="locationUL__container">
       <p className="locationUl__paragraph"> Nombre: {locationdata.name}</p>
-      <p className="locationUl__paragraph"> Tipo:{locationdata.type}</p>
+      <p className="locationUl__paragraph"> Tipo: {locationdata.type}</p>
       <p className="locationUl__paragraph">
         {" "}
-        Dimensión:{locationdata.dimension}
+        Dimensión: {locationdata.dimension}
       </p>
       <p className="locationUl__paragraph">
         {" "}
         Nº Residentes: {locationdata.residents}{" "}
       </p>
-    </>
+    </div>
   );
 }
 export { LocationCard };
