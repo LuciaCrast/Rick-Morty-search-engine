@@ -1,4 +1,4 @@
-[En proceso de mejora]
+## [En proceso de mejora... paginación, búsqueda por localización y episodio, rutas internas conectadas]
 
 # Buscador de Personajes Rick & Morty
 
