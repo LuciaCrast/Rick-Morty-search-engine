@@ -1,11 +1,10 @@
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Warning } from "../WarningError/Warning";
-
 import { PrincipalCharacter } from "../Characters/PrincipalCharacter";
 import { PrincipalLocation } from "../Location/PrincipalLocation";
 import { CharacterDetail } from "../Characters/CharacterDetails";
+import { LocationDetails } from "../Location/LocationDetails";
 import { Principal } from "../Home/Principal";
-
 import "./App.scss";
 
 function App() {
@@ -20,6 +19,7 @@ function App() {
         />
         <Route path="/principallocation" exact component={PrincipalLocation} />
         <Route path="/characterdetails/:id" children={<CharacterDetail />} />
+        <Route path="/locationdetails/:id" children={<LocationDetails />} />
         <Route path="" children={<Warning />} />
       </Switch>
     </Router>

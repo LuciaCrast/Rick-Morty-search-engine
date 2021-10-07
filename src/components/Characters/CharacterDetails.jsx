@@ -22,7 +22,7 @@ function CharacterDetail() {
       .then((character) => {
         setCharacterDetail(character);
       })
-      .catch((fail) => {
+      .catch(() => {
         setFail(true);
       });
   }, [id]);

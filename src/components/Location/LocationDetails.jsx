@@ -4,21 +4,23 @@ import { Link } from "react-router-dom";
 import { GetDataDetailsLocation } from "../../service/GetDataFromApi";
 import { LocationCard } from "./LocationCard";
 
-function LocationDetails(locationdata) {
+function LocationDetails() {
   let { id } = useParams();
-  const [locationDetails, setLocationDetails] = useState();
+  const [locationData, setLocationData] = useState();
   const [error, setError] = useState(false);
 
   useEffect(() => {
     setError(false);
     GetDataDetailsLocation(id)
       .then((location) => {
-        setLocationDetails(location);
+        setLocationData(location);
       })
-      .catch(() => setError(true));
+      .catch(() => {
+        setError(true);
+      });
   }, [id]);
 
-  if (locationDetails) {
+  if (locationData) {
     return (
       <div>
         <p className="arrowContainer">
@@ -28,13 +30,23 @@ function LocationDetails(locationdata) {
             </div>
           </Link>
         </p>
-        <LocationCard locationdata={locationdata} />
+        <LocationCard locationdata={locationData} />
       </div>
     );
   } else if (error) {
-    return <p> No se ha encontrado la localización </p>;
+    return (
+      <div>
+        <Link to="/principallocation">
+          <div className="arrowLink">
+            <i className="far fa-arrow-alt-circle-left "></i> Volver
+          </div>
+        </Link>
+
+        <p> No se ha encontrado la localización </p>
+      </div>
+    );
   } else {
-    <p> Cargando... </p>;
+    return <p> Cargando... </p>;
   }
 }
 export { LocationDetails };

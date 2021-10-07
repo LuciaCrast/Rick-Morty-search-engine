@@ -65,7 +65,7 @@ function GetDataFromApiLocation(params = {}) {
 }
 
 function GetDataDetailsLocation(id) {
-  const ENDPOINT = "https://rickandmortyapi.com/api/location";
+  const ENDPOINT = "https://rickandmortyapi.com/api/location/";
   return fetch(ENDPOINT + id)
     .then((response) => response.json())
     .then((response) => {
