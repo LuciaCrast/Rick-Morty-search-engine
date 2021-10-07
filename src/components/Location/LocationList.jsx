@@ -1,12 +1,29 @@
 import { Link } from "react-router-dom";
 import { LocationCard } from "./LocationCard";
+import { ErrorMsg } from "../../utils/utils";
 import "./LocationList.scss";
 
-function LocationList({ apiDataLocation, error }) {
+function LocationList({
+  apiDataLocation,
+  error,
+  valueDimensionLocation,
+  valueNameLocation,
+  valueTypeLocation,
+}) {
   return (
     <>
       {error ? (
-        <p> No se ha encontrado la búsqueda</p>
+        <section>
+          <p> No se ha encontrado la búsqueda</p>
+          <p>
+            {" "}
+            {ErrorMsg(
+              valueNameLocation,
+              valueTypeLocation,
+              valueDimensionLocation
+            )}{" "}
+          </p>
+        </section>
       ) : (
         <ul className="locationUl">
           {apiDataLocation.map((locationdata) => (

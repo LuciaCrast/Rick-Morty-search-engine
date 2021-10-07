@@ -28,11 +28,9 @@ function PrincipalLocation() {
         .then(({ locationArray, totalPages }) => {
           setApiDataLocation(locationArray);
           setPagesLocation(totalPages);
-          console.log(error);
         })
         .catch(() => {
           setError(true);
-          console.log(error);
         });
     }
   }, [
@@ -92,7 +90,13 @@ function PrincipalLocation() {
           }}
         />
       ) : null}
-      <LocationList apiDataLocation={apiDataLocation} error={error} />
+      <LocationList
+        apiDataLocation={apiDataLocation}
+        error={error}
+        valueNameLocation={valueNameLocation}
+        valueTypeLocation={valueTypeLocation}
+        valueDimensionLocation={valueDimensionLocation}
+      />
     </>
   );
 }
