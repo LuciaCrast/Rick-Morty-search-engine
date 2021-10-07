@@ -2,17 +2,23 @@ import { Link } from "react-router-dom";
 import { LocationCard } from "./LocationCard";
 import "./LocationList.scss";
 
-function LocationList({ apiDataLocation }) {
+function LocationList({ apiDataLocation, error }) {
   return (
-    <ul className="locationUl">
-      {apiDataLocation.map((locationdata) => (
-        <li className="locationUl__li" key={locationdata.id}>
-          <Link>
-            <LocationCard locationdata={locationdata} />
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      {error ? (
+        <p> No se ha encontrado la búsqueda</p>
+      ) : (
+        <ul className="locationUl">
+          {apiDataLocation.map((locationdata) => (
+            <li className="locationUl__li" key={locationdata.id}>
+              <Link>
+                <LocationCard locationdata={locationdata} />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
 export { LocationList };

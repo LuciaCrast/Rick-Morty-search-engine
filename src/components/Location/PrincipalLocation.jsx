@@ -13,19 +13,27 @@ function PrincipalLocation() {
   const [valueTypeLocation, setValueTypeLocation] = useState("");
   const [valueDimensionLocation, setValueDimensionLocation] = useState("");
   const [searchAPILocation, setSearchAPILocation] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (searchAPILocation) {
+      setError(false);
       setSearchAPILocation(false);
       GetDataFromApiLocation({
         page: currentSiteLocation,
         name: valueNameLocation,
         type: valueTypeLocation,
         dimension: valueDimensionLocation,
-      }).then(({ locationArray, totalPages }) => {
-        setApiDataLocation(locationArray);
-        setPagesLocation(totalPages);
-      });
+      })
+        .then(({ locationArray, totalPages }) => {
+          setApiDataLocation(locationArray);
+          setPagesLocation(totalPages);
+          console.log(error);
+        })
+        .catch(() => {
+          setError(true);
+          console.log(error);
+        });
     }
   }, [
     currentSiteLocation,
@@ -66,23 +74,25 @@ function PrincipalLocation() {
           setSearchAPILocation(true);
         }}
       />
-      <Pagination
-        currentSite={currentSiteLocation}
-        pages={pagesLocation}
-        onClickPrevious={() => {
-          if (currentSiteLocation >= 2) {
-            setCurrentSiteLocation(currentSiteLocation - 1);
-            setSearchAPILocation(true);
-          }
-        }}
-        onClickAfter={() => {
-          if (currentSiteLocation < pagesLocation) {
-            setCurrentSiteLocation(currentSiteLocation + 1);
-            setSearchAPILocation(true);
-          }
-        }}
-      />
-      <LocationList apiDataLocation={apiDataLocation} />
+      {!error ? (
+        <Pagination
+          currentSite={currentSiteLocation}
+          pages={pagesLocation}
+          onClickPrevious={() => {
+            if (currentSiteLocation >= 2) {
+              setCurrentSiteLocation(currentSiteLocation - 1);
+              setSearchAPILocation(true);
+            }
+          }}
+          onClickAfter={() => {
+            if (currentSiteLocation < pagesLocation) {
+              setCurrentSiteLocation(currentSiteLocation + 1);
+              setSearchAPILocation(true);
+            }
+          }}
+        />
+      ) : null}
+      <LocationList apiDataLocation={apiDataLocation} error={error} />
     </>
   );
 }
