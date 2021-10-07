@@ -54,7 +54,7 @@ function CharacterDetail() {
       </div>
     );
   } else {
-    return <p>Loquesea</p>;
+    return <p> Cargando... </p>;
   }
 }
 export { CharacterDetail };

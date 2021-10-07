@@ -28,7 +28,7 @@ function LocationList({
         <ul className="locationUl">
           {apiDataLocation.map((locationdata) => (
             <li className="locationUl__li" key={locationdata.id}>
-              <Link>
+              <Link to={`/locationdetails/${locationdata.id}`}>
                 <LocationCard locationdata={locationdata} />
               </Link>
             </li>
