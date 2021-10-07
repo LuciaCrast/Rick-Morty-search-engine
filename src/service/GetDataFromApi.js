@@ -64,8 +64,25 @@ function GetDataFromApiLocation(params = {}) {
     });
 }
 
+function GetDataDetailsLocation(id) {
+  const ENDPOINT = "https://rickandmortyapi.com/api/location";
+  return fetch(ENDPOINT + id)
+    .then((response) => response.json())
+    .then((response) => {
+      if (response.error) throw new Error(response.error);
+      return {
+        id: response.id,
+        name: response.name,
+        type: response.type,
+        dimension: response.dimension,
+        residents: response.dimension.length,
+      };
+    });
+}
+
 export {
   GetDataFromApiCharacter,
   GetDataDetailsCharacter,
   GetDataFromApiLocation,
+  GetDataDetailsLocation,
 };
