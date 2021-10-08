@@ -1,0 +1,22 @@
+.episodeUl {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-flow: wrap;
+  &__li {
+    height: 260px;
+    width: 260px;
+    text-decoration: none;
+    border: solid 3px grey;
+    margin-bottom: 25px;
+    // background-image: url("../../images/Selection_084.png");
+    // background-position: center;
+    // background-size: cover;
+    background-color: black;
+  }
+  &__paragraph {
+    color: white;
+  }
+}
