@@ -16,12 +16,11 @@ function LocationList({
         <section>
           <p> No se ha encontrado la búsqueda</p>
           <p>
-            {" "}
             {ErrorMsg(
               valueNameLocation,
               valueTypeLocation,
               valueDimensionLocation
-            )}{" "}
+            )}
           </p>
         </section>
       ) : (
