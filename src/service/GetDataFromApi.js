@@ -80,9 +80,34 @@ function GetDataDetailsLocation(id) {
     });
 }
 
+function GetDataFromApiEpisode(params = {}) {
+  const ENDPOINT = "https://rickandmortyapi.com/api/episode";
+  const searchParams = new URLSearchParams();
+  for (let fieldName in params) {
+    if (params[fieldName]) {
+      searchParams.append(fieldName, params[fieldName]);
+    }
+  }
+  return fetch(ENDPOINT + "?" + searchParams.toString())
+    .then((response) => response.json())
+    .then((response) => {
+      const episodeArray = response.results.map((episode) => {
+        return {
+          id: episode.id,
+          name: episode.name,
+          airDate: episode.air_date,
+          episode: episode.episode,
+          characters: episode.characters.length,
+        };
+      });
+      return { episodeArray, totalPages: response.info.pages };
+    });
+}
+
 export {
   GetDataFromApiCharacter,
   GetDataDetailsCharacter,
   GetDataFromApiLocation,
   GetDataDetailsLocation,
+  GetDataFromApiEpisode,
 };
