@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ErrorMsg } from "../../utils/utils";
 import { EpisodeCard } from "./EpisodeCard";
 import "./episodelist.scss";
@@ -20,9 +20,9 @@ function EpisodeList({
         <ul className="episodeUl">
           {apiDataEpisode.map((episodedata) => (
             <li className="episodeUl__li" key={episodedata.id}>
-              {/* <Link to={`/episodedetails/${episodedata.id}`}> */}
-              <EpisodeCard episodedata={episodedata} />
-              {/* </Link> */}
+              <Link to={`/episodedetails/${episodedata.id}`}>
+                <EpisodeCard episodedata={episodedata} />
+              </Link>
             </li>
           ))}
         </ul>

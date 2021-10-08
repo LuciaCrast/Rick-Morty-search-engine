@@ -18,5 +18,20 @@
   }
   &__paragraph {
     color: white;
+    font-weight: bold;
+    font-family: "Indie Flower";
+    font-size: 20px;
+    margin: 15px 15px;
+  }
+}
+@media (min-width: 520px) {
+  .episodeUl {
+    &__li {
+      margin-right: 30px;
+      height: 300px;
+    }
+    &__paragraph {
+      font-size: 23px;
+    }
   }
 }
