@@ -6,6 +6,7 @@ import { CharacterDetail } from "../Characters/CharacterDetails";
 import { LocationDetails } from "../Location/LocationDetails";
 import { Principal } from "../Home/Principal";
 import "./App.scss";
+import { PrincipalEpisode } from "../Episodes/PrincipalEpisode";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/principallocation" exact component={PrincipalLocation} />
         <Route path="/characterdetails/:id" children={<CharacterDetail />} />
         <Route path="/locationdetails/:id" children={<LocationDetails />} />
+        <Route path="/principalepisode" exact component={PrincipalEpisode} />
         <Route path="" children={<Warning />} />
       </Switch>
     </Router>
