@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 // import { useHistory } from "react-router";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { CharacterCard } from "./CharacterCard";
 import { GetDataDetailsCharacter } from "../../service/GetDataFromApi";
 import "./characterdetails.scss";
+import { ArrowBackPrincipalCharacter } from "./ArrowBackPrincipalCharacter";
 
 function CharacterDetail() {
   const [characterDetail, setCharacterDetail] = useState();
@@ -29,29 +29,21 @@ function CharacterDetail() {
 
   if (characterDetail) {
     return (
-      <div className="bodyDetails">
-        <p className="arrowContainer">
-          <Link to="/principalcharacter">
-            <div className="arrowLink">
-              <i className="far fa-arrow-alt-circle-left "></i> Volver
-            </div>
-          </Link>
-        </p>
+      <>
+        <ArrowBackPrincipalCharacter />
         <div className="details">
           <CharacterCard card={characterDetail} />
           <p className="list__text">Episodios: {characterDetail.episode}</p>
           <p className="list__text">{characterDetail.origin}</p>
         </div>
-      </div>
+      </>
     );
   } else if (fail) {
     return (
-      <div className="bodyDetails">
-        <Link to="/principalcharacter">
-          <i className="far fa-arrow-alt-circle-left arrowLink"></i> Volver
-        </Link>
+      <>
+        <ArrowBackPrincipalCharacter />
         <p>Personaje no encontrado</p>
-      </div>
+      </>
     );
   } else {
     return <p> Cargando... </p>;

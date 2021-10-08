@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { GetDataDetailsLocation } from "../../service/GetDataFromApi";
+import { ArrowBackPrincipalLocation } from "./ArrowBackPrincipalLocation";
 import { LocationCard } from "./LocationCard";
 
 function LocationDetails() {
@@ -23,25 +24,14 @@ function LocationDetails() {
   if (locationData) {
     return (
       <div>
-        <p className="arrowContainer">
-          <Link to="/principallocation">
-            <div className="arrowLink">
-              <i className="far fa-arrow-alt-circle-left "></i> Volver
-            </div>
-          </Link>
-        </p>
+        <ArrowBackPrincipalLocation />
         <LocationCard locationdata={locationData} />
       </div>
     );
   } else if (error) {
     return (
       <div>
-        <Link to="/principallocation">
-          <div className="arrowLink">
-            <i className="far fa-arrow-alt-circle-left "></i> Volver
-          </div>
-        </Link>
-
+        <ArrowBackPrincipalLocation />
         <p> No se ha encontrado la localización </p>
       </div>
     );
