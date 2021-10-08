@@ -26,7 +26,6 @@ function PrincipalEpisode() {
         .then(({ episodeArray, totalPages }) => {
           setApiDataEpisode(episodeArray);
           setPagesEpisode(totalPages);
-          console.log(episodeArray);
         })
         .catch(() => {
           setError(true);
