@@ -104,10 +104,27 @@ function GetDataFromApiEpisode(params = {}) {
     });
 }
 
+function GetDataDetailsEpisode(id) {
+  const ENDPOINT = "https://rickandmortyapi.com/api/episode/";
+  return fetch(ENDPOINT + id)
+    .then((response) => response.json())
+    .then((response) => {
+      if (response.error) throw new Error(response.error);
+      return {
+        id: response.id,
+        name: response.name,
+        airDate: response.air_date,
+        episode: response.episode,
+        characters: response.characters.length,
+      };
+    });
+}
+
 export {
   GetDataFromApiCharacter,
   GetDataDetailsCharacter,
   GetDataFromApiLocation,
   GetDataDetailsLocation,
   GetDataFromApiEpisode,
+  GetDataDetailsEpisode,
 };
