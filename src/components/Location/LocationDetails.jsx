@@ -25,9 +25,9 @@ function LocationDetails() {
     return (
       <>
         <ArrowBackPrincipalLocation />
-        <div className="detailsLocation">
+        <section className="detailsLocation">
           <LocationCard locationdata={locationData} />
-        </div>
+        </section>
       </>
     );
   } else if (error) {
