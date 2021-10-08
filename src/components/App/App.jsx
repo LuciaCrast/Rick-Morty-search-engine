@@ -7,6 +7,7 @@ import { LocationDetails } from "../Location/LocationDetails";
 import { Principal } from "../Home/Principal";
 import "./App.scss";
 import { PrincipalEpisode } from "../Episodes/PrincipalEpisode";
+import { EpisodeDetails } from "../Episodes/EpisodeDetails";
 
 function App() {
   return (
@@ -18,10 +19,11 @@ function App() {
           exact
           component={PrincipalCharacter}
         />
-        <Route path="/principallocation" exact component={PrincipalLocation} />
         <Route path="/characterdetails/:id" children={<CharacterDetail />} />
+        <Route path="/principallocation" exact component={PrincipalLocation} />
         <Route path="/locationdetails/:id" children={<LocationDetails />} />
         <Route path="/principalepisode" exact component={PrincipalEpisode} />
+        <Route path="/episodedetails/:id" children={<EpisodeDetails />} />
         <Route path="" children={<Warning />} />
       </Switch>
     </Router>
