@@ -34,11 +34,13 @@ function EpisodeDetails() {
     return (
       <div>
         <ArrowBackPrincipalEpisode />
-        <p> No se ha encontrado la localización </p>
+        <p className="detailsEpisode__notFound">
+          No se ha encontrado el episodio
+        </p>
       </div>
     );
   } else {
-    return <p> Cargando... </p>;
+    return <p className="detailsEpisode__loading"> Cargando... </p>;
   }
 }
 

@@ -13,6 +13,16 @@
     url("../../images/Selection_85.png");
   background-position: center;
   background-size: cover;
+  &__notFound {
+    color: white;
+    font-family: "Indie Flower";
+    text-align: center;
+  }
+  &__loading {
+    color: white;
+    font-family: "Indie Flower";
+    text-align: center;
+  }
 }
 
 @media (min-width: 520px) {
