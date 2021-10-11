@@ -34,11 +34,14 @@ function LocationDetails() {
     return (
       <div>
         <ArrowBackPrincipalLocation />
-        <p> No se ha encontrado la localización </p>
+        <p className="detailsLocation__notFound">
+          {" "}
+          No se ha encontrado la localización{" "}
+        </p>
       </div>
     );
   } else {
-    return <p> Cargando... </p>;
+    return <p className="detailsLocation__loading"> Cargando... </p>;
   }
 }
 export { LocationDetails };
