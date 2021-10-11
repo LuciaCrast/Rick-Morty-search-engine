@@ -8,7 +8,7 @@ function Warning() {
       <Header />
       <p className="">
         <Link to="/">
-          <i className="far fa-arrow-alt-circle-left">Volver</i>
+          <i className="far fa-arrow-alt-circle-left"></i>Volver
         </Link>
       </p>
       <p className="warning"> Dirección no encontrada</p>
