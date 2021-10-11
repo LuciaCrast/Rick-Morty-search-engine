@@ -9,4 +9,14 @@
   background-position: center;
   background-size: cover;
   background-color: black;
+  &__notFound {
+    color: white;
+    font-family: "Indie Flower";
+    text-align: center;
+  }
+  &__loading {
+    color: white;
+    font-family: "Indie Flower";
+    text-align: center;
+  }
 }
