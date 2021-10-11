@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { EpisodeCard } from "./EpisodeCard";
 import { GetDataDetailsEpisode } from "../../service/GetDataFromApi";
 import { ArrowBackPrincipalEpisode } from "./ArrowBackPrincipalEpisode";
+import "./episodeDetails.scss";
 
 function EpisodeDetails() {
   let { id } = useParams();

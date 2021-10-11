@@ -1,0 +1,22 @@
+.detailsEpisode {
+  margin: auto;
+  height: 260px;
+  width: 260px;
+  text-decoration: none;
+  border: solid 3px #6aba68;
+  margin-bottom: 25px;
+  background-image: linear-gradient(
+      121deg,
+      rgba(150, 150, 150, 1) 0%,
+      rgba(0, 0, 0, 0.5382528011204482) 100%
+    ),
+    url("../../images/Selection_85.png");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 520px) {
+  .detailsEpisode {
+    height: 300px;
+  }
+}
