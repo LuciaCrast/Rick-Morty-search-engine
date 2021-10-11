@@ -13,8 +13,11 @@ function EpisodeList({
     <>
       {error ? (
         <section>
-          <p> No se ha encontrado la búsqueda</p>
-          <p> {ErrorMsg(valueNameEpisode, valueTypeEpisode)} </p>
+          <p className="episodeNotFound">
+            {" "}
+            No se ha encontrado la búsqueda "
+            {ErrorMsg(valueNameEpisode, valueTypeEpisode)}"{" "}
+          </p>
         </section>
       ) : (
         <ul className="episodeUl">
