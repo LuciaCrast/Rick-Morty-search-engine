@@ -5,6 +5,7 @@ import { CharacterList } from "./CharacterList";
 import { GetLS, SetLS } from "../../service/LocalStorage";
 import { GetDataFromApiCharacter } from "../../service/GetDataFromApi";
 import { Pagination } from "../Common/Pagination";
+import { Footer } from "../Common/Footer";
 import "./principalCharacter.scss";
 
 function PrincipalCharacter() {
@@ -88,7 +89,26 @@ function PrincipalCharacter() {
           />
         ) : null}
         <CharacterList fail={fail} data={data} valueName={valueName} />
+        {!fail ? (
+          <Pagination
+            currentSite={currentSite}
+            pages={pages}
+            onClickPrevious={() => {
+              if (currentSite >= 2) {
+                setCurrentSite(currentSite - 1);
+                setSearchAtAPI(true);
+              }
+            }}
+            onClickAfter={() => {
+              if (currentSite < pages) {
+                setCurrentSite(currentSite + 1);
+                setSearchAtAPI(true);
+              }
+            }}
+          />
+        ) : null}
       </main>
+      <Footer />
     </>
   );
 }

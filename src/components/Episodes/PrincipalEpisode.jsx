@@ -4,6 +4,7 @@ import { Header } from "../Common/Header";
 import { EpisodeFilter } from "./EpisodeFilter";
 import { Pagination } from "../Common/Pagination";
 import { EpisodeList } from "./EpisodeList";
+import { Footer } from "../Common/Footer";
 
 function PrincipalEpisode() {
   const [apiDataEpisode, setApiDataEpisode] = useState([]);
@@ -87,6 +88,25 @@ function PrincipalEpisode() {
         valueNameEpisode={valueNameEpisode}
         valueTypeEpisode={valueTypeEpisode}
       />
+      {!error ? (
+        <Pagination
+          currentSite={currentSiteEpisode}
+          pages={pagesEpisode}
+          onClickPrevious={() => {
+            if (currentSiteEpisode >= 2) {
+              setCurrentSiteEpisode(currentSiteEpisode - 1);
+              setSearchAPIEpisode(true);
+            }
+          }}
+          onClickAfter={() => {
+            if (currentSiteEpisode < pagesEpisode) {
+              setCurrentSiteEpisode(currentSiteEpisode + 1);
+              setSearchAPIEpisode(true);
+            }
+          }}
+        />
+      ) : null}
+      <Footer />
     </>
   );
 }

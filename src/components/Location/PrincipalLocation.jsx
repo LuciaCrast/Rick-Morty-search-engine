@@ -4,6 +4,7 @@ import { Header } from "../Common/Header";
 import { Pagination } from "../Common/Pagination";
 import { LocationFilter } from "./LocationFilter";
 import { LocationList } from "./LocationList";
+import { Footer } from "../Common/Footer";
 
 function PrincipalLocation() {
   const [apiDataLocation, setApiDataLocation] = useState([]);
@@ -97,6 +98,25 @@ function PrincipalLocation() {
         valueTypeLocation={valueTypeLocation}
         valueDimensionLocation={valueDimensionLocation}
       />
+      {!error ? (
+        <Pagination
+          currentSite={currentSiteLocation}
+          pages={pagesLocation}
+          onClickPrevious={() => {
+            if (currentSiteLocation >= 2) {
+              setCurrentSiteLocation(currentSiteLocation - 1);
+              setSearchAPILocation(true);
+            }
+          }}
+          onClickAfter={() => {
+            if (currentSiteLocation < pagesLocation) {
+              setCurrentSiteLocation(currentSiteLocation + 1);
+              setSearchAPILocation(true);
+            }
+          }}
+        />
+      ) : null}
+      <Footer />
     </>
   );
 }
