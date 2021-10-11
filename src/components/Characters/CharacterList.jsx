@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CharacterCard } from "./CharacterCard";
+import { ErrorMsg } from "../../utils/utils";
 import "./characterlist.scss";
 
 function CharacterList({ valueName, data, fail }) {
@@ -7,7 +8,8 @@ function CharacterList({ valueName, data, fail }) {
     <>
       {fail ? (
         <p className="list__fail">
-          El nombre {valueName} no ha sido encontrado
+          {" "}
+          No se ha encontrado la búsqueda "{ErrorMsg(valueName)}"{" "}
         </p>
       ) : (
         <ul className="list__ul">
