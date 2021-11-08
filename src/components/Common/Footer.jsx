@@ -11,7 +11,7 @@ function Footer() {
         </nav>
       </Link>
       <p className="footer__copy">
-        <i class="fas fa-copyright"></i> Lucía Crast
+        <i className="fas fa-copyright"></i> Lucía Crast
       </p>
     </footer>
   );
