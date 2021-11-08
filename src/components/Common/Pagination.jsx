@@ -1,3 +1,4 @@
+import { useState } from "react/cjs/react.development";
 import "./pagination.scss";
 
 function Pagination({ onClickAfter, onClickPrevious, currentSite, pages }) {
