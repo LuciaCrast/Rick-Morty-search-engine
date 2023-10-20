@@ -4,14 +4,14 @@
   background-position: center;
   background-size: contain;
   margin: 0px;
-  height: 200px;
-  border-bottom: solid 3px #6aba68;
+  min-height: 200px;
   background-repeat: no-repeat;
+  padding-bottom: 20px;
   &__title {
     font-size: 18px;
     text-align: center;
     font-family: "Indie Flower", cursive;
-    padding-top: 175px;
+
     color: white;
   }
 }

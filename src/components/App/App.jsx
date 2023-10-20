@@ -5,10 +5,9 @@ import { PrincipalLocation } from "../Location/PrincipalLocation";
 import { CharacterDetail } from "../Characters/CharacterDetails";
 import { LocationDetails } from "../Location/LocationDetails";
 import { Principal } from "../Home/Principal";
-import "./App.scss";
 import { PrincipalEpisode } from "../Episodes/PrincipalEpisode";
 import { EpisodeDetails } from "../Episodes/EpisodeDetails";
-
+import "./App.scss";
 function App() {
   return (
     <Router>
